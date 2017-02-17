@@ -1,2 +1,50 @@
-# clean-install-your-mac-gentlely
-Tutorial of how to clean install your Mac gentlely
+# How to clean install your mac
+
+## Checklist
+
+- Bootable USB
+  - [ ] Download macOS Sierra
+  - [ ] Format a USB drive
+  - [ ] Create bootable macOS USB
+- Backup
+  - Backup your iPhone from iTunes with Password
+  - Time Machine
+  - Personal Data
+    - [ ] ~/Desktop
+    - [ ] ~/Documents
+    - [ ] ~/Downloads
+    - [ ] ~/Movies
+    - [ ] ~/Music
+    - [ ] ~/Pictures
+  - Software Data
+    - [ ] Keychains: iCloud Sync
+    - [ ] Safari Bookmarks: https://www.lifewire.com/back-up-or-move-safari-bookmarks-to-new-mac-2260891
+    - [ ] iBooks: https://deciphertools.com/blog/how-to-backup-ibooks-pdfs/
+    - [ ] Messages History: http://www.imore.com/how-view-and-move-your-imessage-history-and-attachments
+    - [ ] Day One Backup & Enable Sync
+    - [ ] Money Pro Backup & Enable Sync
+    - [ ] 1Password Backup & Enable Sync
+    - [ ] Beautiful Screen Saver
+  - Dotfiles
+    - [ ] ~/.ssh
+    - [ ] ~/.zshrc
+    - [ ] ~/.gitconfig
+    - [ ] ~/.vim
+  - [ ] Unauthoriz devices from iTunes
+- Install macOS
+- Restore
+  - [ ] Setting
+    - [ ] Firewall
+    - [ ] FileValut
+    - [ ] Hot Corner
+    - [ ] Screen Saver
+    - [ ] Keyboard
+    - [ ] Mouse
+  - [ ] Personal Data
+  - [ ] Software
+    - [ ] 1Password
+    - [ ] Day One
+    - [ ] Money Pro
+    - [ ] iWork
+    - [ ] f.lux
+    - [ ] Conv
