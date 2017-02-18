@@ -24,13 +24,14 @@
     - [ ] Day One Backup & Enable Sync
     - [ ] Money Pro Backup & Enable Sync
     - [ ] 1Password Backup & Enable Sync
+    - [ ] Fonts: https://discussions.apple.com/thread/737547?start=0&tstart=0
+    - [ ] LDOCE5 Viewer: https://github.com/ciscorn/ldoce5viewer
     - [ ] Beautiful Screen Saver
   - Dotfiles
     - [ ] ~/.ssh
     - [ ] ~/.zshrc
     - [ ] ~/.gitconfig
-    - [ ] ~/.vim
-  - [ ] Unauthoriz devices from iTunes
+  - [ ] Unauthorize devices from iTunes
 - Install macOS
 - Restore
   - [ ] Setting
@@ -48,3 +49,13 @@
     - [ ] iWork
     - [ ] f.lux
     - [ ] Conv
+    - [ ] OmniDiskSweeper
+    - [ ] AppCleaner
+    - [ ] HandBrake
+    - [ ] Caffeine
+    - [ ] Dash
+    - [ ] Fonts
+    - [ ] LDOCE5 Viewer
+    - [ ] Magnet
+    - [ ] Moom
+    - [ ] ShooterSubX
