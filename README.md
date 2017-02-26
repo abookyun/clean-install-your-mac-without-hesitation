@@ -1,61 +1,201 @@
-# How to clean install your mac
+# Clean install your Mac without hesitation
 
-## Checklist
-
-- Bootable USB
-  - [ ] Download macOS Sierra
-  - [ ] Format a USB drive
-  - [ ] Create bootable macOS USB
+- Requirement
+  - An external drive with available space larger than your Mac for Time Machine and migrated data
+  - An USB larger than 8GB for bootable disk
 - Backup
-  - Backup your iPhone from iTunes with Password
-  - Time Machine
-  - Personal Data
+  - Connect your iPhone to iTunes and Make a full backup with option `Encrypt iPhone backup`
+  - Connect your Time Machine drive and run a full backup of your Mac
+  - Softwares
+    - [ ] Install [Homebrew](https://brew.sh) with `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    - [ ] Install [mas-cli](https://github.com/mas-cli/mas) with `brew install mas`
+    - [ ] Dump softwares list to `Brewfile` file with `brew bundle dump`
+    - [ ] Compare apps in `Application` folder with `Brewfile`.
+      - [ ] For apps found only in `Application` folder, `brew cask search {app_name}`.
+      - [ ] For apps found only in `Brewfile`, google and find if you need it anymore.
+    - [ ] Comment the `Brewfile` with leading `#` about how or why you need it.
+  - Software Data
+    - [ ] Keychains
+      - [ ] Turn on iCloud Keychains sync
+    - [ ] Safari
+      - [ ] [Backup Bookmarks](https://www.lifewire.com/back-up-or-move-safari-bookmarks-to-new-mac-2260891) from `~/Library/Safari/Bookmarks.plist`
+      - [ ] Backup Browse History from `~/Library/Safari/History*`
+      - [ ] Backup extensions from `~/Library/Safari/Extensions`
+    - [ ] iTunes
+      - [ ] Backup iTunes Library folder `iTunes` from `~/Music`
+      - [ ] [Deauthorize Apple ID from iTunes](https://support.apple.com/en-us/HT201251)
+    - [ ] Photos
+      - [ ] Backup Photos Library file `Photos Library.photoslibrary` from `~/Pictures`
+    - [ ] Messages
+      - [ ] [Backup History](http://www.imore.com/how-view-and-move-your-imessage-history-and-attachments) from `~/Library/Messages`
+    - [ ] iBooks
+      - [ ] [Backup PDFs and Books](https://deciphertools.com/blog/how-to-backup-ibooks-pdfs/)
+    - [ ] Fonts
+      - [ ] [Backup Fonts](https://discussions.apple.com/thread/737547)
+    - [ ] Dashboard Widgets
+      - [ ] Backup widgets from `~/Library/Widgets`
+    - [ ] 1Password
+      - [ ] Enable Sync
+      - [ ] Backup backup files from `~/Library/Containers/2BUA8C4S2C.com.agilebits.onepassword-osx-helper/Data/Library/Backups`
+    - [ ] Day One
+      - [ ] Enable Sync
+      - [ ] Backup backup files from `Library/Group Containers/5U8NS4GX82.dayoneapp2/Data/Backup`
+    - [ ] Money Pro
+      - [ ] Enable Sync
+      - [ ] Manually backup from iOS app
+    - [ ] Dictionary
+      - [ ] [LDOCE5 Viewer](https://github.com/ciscorn/ldoce5viewer)
+      - [ ] Backup `ldoce5.data`
+    - [ ] Dash
+      - [ ] Backup license file
+    - [ ] Screen Saver
+      - [ ] [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
+      - [ ] [Google Featured Photos Screen Saver](https://plus.google.com/featuredphotos)
+    - [ ] Dotfiles
+      - [ ] ~/.ssh
+      - [ ] ~/.zshrc
+      - [ ] ~/.gitconfig
+  - Static files
     - [ ] ~/Desktop
     - [ ] ~/Documents
     - [ ] ~/Downloads
     - [ ] ~/Movies
     - [ ] ~/Music
     - [ ] ~/Pictures
-  - Software Data
-    - [ ] Keychains: iCloud Sync
-    - [ ] Safari Bookmarks: https://www.lifewire.com/back-up-or-move-safari-bookmarks-to-new-mac-2260891
-    - [ ] iBooks: https://deciphertools.com/blog/how-to-backup-ibooks-pdfs/
-    - [ ] Messages History: http://www.imore.com/how-view-and-move-your-imessage-history-and-attachments
-    - [ ] Day One Backup & Enable Sync
-    - [ ] Money Pro Backup & Enable Sync
-    - [ ] 1Password Backup & Enable Sync
-    - [ ] Fonts: https://discussions.apple.com/thread/737547?start=0&tstart=0
-    - [ ] LDOCE5 Viewer: https://github.com/ciscorn/ldoce5viewer
-    - [ ] Beautiful Screen Saver
-  - Dotfiles
-    - [ ] ~/.ssh
-    - [ ] ~/.zshrc
-    - [ ] ~/.gitconfig
-  - [ ] Unauthorize devices from iTunes
-- Install macOS
-- Restore
-  - [ ] Setting
-    - [ ] Firewall
-    - [ ] FileValut
-    - [ ] Hot Corner
-    - [ ] Screen Saver
-    - [ ] Keyboard
-    - [ ] Mouse
-  - [ ] Personal Data
-  - [ ] Software
-    - [ ] 1Password
-    - [ ] Day One
-    - [ ] Money Pro
-    - [ ] iWork
-    - [ ] f.lux
-    - [ ] Conv
-    - [ ] OmniDiskSweeper
-    - [ ] AppCleaner
-    - [ ] HandBrake
-    - [ ] Caffeine
-    - [ ] Dash
+- Re-installation
+  - [ ] Bootable USB
+    - [ ] [Download macOS Sierra](https://itunes.apple.com/tr/app/macos-sierra/id1127487414?mt=12)
+    - [ ] Format USB drive with `Mac OS Extented (Journaled)` format and `Untitled` name
+    - [ ] Create bootable macOS USB with `sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction`
+  - [ ] Backup everything again
+    - Connect your iPhone to iTunes and Make a full backup with option `Encrypt iPhone backup`
+    - Connect your Time Machine drive and run a full backup of your Mac
+  - [ ] Make sure you have these ready
+    - [ ] Your iPhone was properly backed up
+    - [ ] Your Mac was properly backed up
+    - [ ] `Brewfile` is correctly on Dropbox or drive
+    - [ ] Check your migrated files are fully ready
+  - [ ] WARNING: YOU ARE GOING TO DELETE EVERYTHING ON YOUR MAC IN THE NEXT STEP!!! You won’t be able to to open your Mac until macOS is installed.
+  - [ ] Format and Install your Mac
+    - [ ] Plug in the bootable USB
+    - [ ] Restart & hold down the Option(⌥) key
+    - [ ] Choose Install OS X Sierra(the bootable USB)
+    - [ ] Select `Disk Utility` from the menu and erase you Startup Disk(usually named Macintosh HD) with `Mac OS Extended (Journaled)`
+    - [ ] Go back to the main menu; select Install macOS and choose your HDD when prompted
+- Migration
+  - [ ] Install [Homebrew](https://brew.sh) with `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+  - [ ] Install [mas-cli](https://github.com/mas-cli/mas) with `brew install mas`
+  - [ ] Copy `Brewfile` to your home folder then run `brew bundle` in `Terminal`
+  - [ ] Migrate Software data
+    - [ ] Safari
+      - [ ] Migrate bookmarks
+      - [ ] Migrate history
+      - [ ] Migrate extensions
+    - [ ] iTunes
+      - [ ] Migrate iTunes Library
+      - [ ] [Authorize Apple ID to iTunes](https://support.apple.com/en-us/HT201251)
+    - [ ] Photos
+      - [ ] Migrate Photos Library
+    - [ ] Messages
+      - [ ] Migrate Message folder
+    - [ ] iBooks
+      - [ ] Migrate PDFs and Books
     - [ ] Fonts
-    - [ ] LDOCE5 Viewer
-    - [ ] Magnet
-    - [ ] Moom
-    - [ ] ShooterSubX
+      - [ ] Migrate Fonts
+    - [ ] Dashboard Widgets
+      - [ ] Install widgets to `~/Library/Widgets`
+    - [ ] 1Password
+      - [ ] Enable Sync
+      - [ ] Migrate backup files
+    - [ ] Day One
+      - [ ] Enable Sync
+      - [ ] Migrate backup files
+    - [ ] Money Pro
+      - [ ] Enable Sync
+    - [ ] Dictionary
+      - [ ] Migrate `ldoce5.data`
+      - [ ] [LDOCE5 Viewer](https://github.com/ciscorn/ldoce5viewer)
+    - [ ] Screen Saver
+      - [ ] [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
+      - [ ] [Google Featured Photos Screen Saver](https://plus.google.com/featuredphotos)
+    - [ ] Dotfiles
+      - [ ] ~/.ssh
+      - [ ] ~/.zshrc
+      - [ ] ~/.gitconfig
+  - [ ] Migrate static files
+    - [ ] ~/Desktop
+    - [ ] ~/Documents
+    - [ ] ~/Downloads
+    - [ ] ~/Movies
+    - [ ] ~/Music
+    - [ ] ~/Pictures
+  - [ ] Restore Settings
+    - [ ] System Preferences
+      - [ ] General
+        - [ ] Use dark menu bar and Dock
+        - [ ] Recent items: None Documents, Apps, and Servers
+      - [ ] Desktop & Screen Saver
+        - [ ] Start after 2 Minutes
+        - [ ] Use [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
+      - [ ] Dock
+        - [ ] Size: 1/3
+        - [ ] Magnification: Max
+        - [ ] Minimize windows into application icon: on
+        - [ ] Automatically hide and show the Dock: on
+      - [ ] Mission Control
+        - [ ] Group windows by application: on
+        - [ ] Dashboard: As Overlay
+        - [ ] Hot Corners
+          - [ ] Top Left: Dashboard
+          - [ ] Top Right: Desktop
+          - [ ] Bottom Left: Start Screen Saver
+          - [ ] Bottom Right: Put Display to Sleep
+      - [ ] Language & Region
+        - [ ] Add `Traditional Chinese` to Preferred languages
+        - [ ] Time format: 24-Hour Time
+      - [ ] Security & Privacy
+        - [ ] Require password 1 minute after sleep or screen saver begins
+        - [ ] Turn on [FileVault](https://www.apple.com/macos/security/)
+        - [ ] Turn on Firewall
+        - [ ] Enable location for Weather, Siri
+        - [ ] System Service: Show location icon in menu bar
+      - [ ] Notification
+        - [ ] Turn on Do Not Disturb
+        - [ ] Allow repeated calls
+      - [ ] Keyboard
+        - [ ] Key Repeat: Fastest
+        - [ ] Delay Until Repeat: Fatest
+        - [ ] Use smart quotes and dashes: off
+        - [ ] Specify shortcuts for Spotlight, Input Method, Show Notification
+        - [ ] Full Keyboard Access: All controls
+        - [ ] Add `Zhuyin` to input sources
+        - [ ] Dictation: add English, Chinese
+      - [ ] Trackpad
+        - [ ] Turn on Look up & data detectors, Tap to click, App expose
+        - [ ] Tracking speed: 3/4
+      - [ ] Sound
+        - [ ] Show volume in menu bar
+        - [ ] Play feedback when volume is changed
+      - [ ] Siri
+        - [ ] Show Siri in menu bar: off
+      - [ ] Time Machine
+        - [ ] Select backup drive
+        - [ ] Show icon in menu bar
+      - [ ] Accessibility
+        - [ ] Zoom: Enable Use scroll gesture to zoom, zoom style: picture in picture
+        - [ ] Mouse & Trackpad: Enable dragging without drag lock, Trackpad Fastest Scrolling Speed, Fastest Mouse Scrolling Speed
+    - [ ] Finder
+      - [ ] Show Hard disks on desktop
+      - [ ] New finder window show Home folder
+      - [ ] Sidebar: Movies, Music, Pictures, Home folder
+      - [ ] Advanced: Show file extensions, searching current folder
+    - [ ] Safari
+      - [ ] Search engine: DuckDuckGo
+      - [ ] Show full website address
+      - [ ] Show Develop menu in menu bar
+    - [ ] iTunes
+      - [ ] iCloud Music Library: on
+    - [ ] Photos
+      - [ ] iCloud Photo Library: on
+    - [ ] Dash
+      - [ ] Install license file
