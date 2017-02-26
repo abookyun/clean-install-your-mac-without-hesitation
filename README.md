@@ -1,5 +1,7 @@
 # Clean install your Mac without hesitation
 
+This is the checklist version of process for clean installing your Mac. To see verbose article, visit [Medium](https://medium.com/@abookyun/clean-install-your-mac-without-hesitation-7d379df8fc87#.1gv7sdq79).
+
 - Requirement
   - An external drive with available space larger than your Mac for Time Machine and migrated data
   - An USB larger than 8GB for bootable disk
