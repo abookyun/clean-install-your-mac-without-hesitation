@@ -199,3 +199,18 @@
       - [ ] iCloud Photo Library: on
     - [ ] Dash
       - [ ] Install license file
+  - [ ] Development Environment
+    - [ ] iTerm2
+      - [ ] Install `oh-my-zsh`  https://github.com/robbyrussell/oh-my-zsh
+    - [ ] Shell
+      - [ ] `maximum-awesome` : https://github.com/square/maximum-awesome
+      - [ ] remember ssh passphrase: https://www.cyberciti.biz/faq/howto-fix-macos-keeps-asking-my-ssh-passphrase-since-i-updated-to-sierra/
+      - [ ] zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+    - [ ] Sublime Text 3
+      - [ ] Install `Package Control` via https://packagecontrol.io
+      - [ ] Install `Package Syncing`
+    - [ ] Dotfiles
+      - [ ] .gitconfig
+      - [ ] .zshrc
+      - [ ] .ssh
+    - [ ] Install ruby via rbenv `rbenv install 2.4.0`
