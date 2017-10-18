@@ -6,7 +6,6 @@ This is the checklist version of process for clean installing your Mac. To see v
   - An external drive with available space larger than your Mac for Time Machine and migrated data
   - An USB larger than 8GB for bootable disk
 - Backup
-  - Connect your iPhone to iTunes and Make a full backup with option `Encrypt iPhone backup`
   - Connect your Time Machine drive and run a full backup of your Mac
   - Softwares
     - [ ] Install [Homebrew](https://brew.sh) with `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
@@ -49,7 +48,7 @@ This is the checklist version of process for clean installing your Mac. To see v
       - [ ] [LDOCE5 Viewer](https://github.com/ciscorn/ldoce5viewer)
       - [ ] Backup `ldoce5.data`
     - [ ] Dash
-      - [ ] Backup license file
+      - [ ] [Backup license file](https://kapeli.com/app_store_migrate)
     - [ ] Screen Saver
       - [ ] [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
       - [ ] [Google Featured Photos Screen Saver](https://plus.google.com/featuredphotos)
@@ -66,9 +65,9 @@ This is the checklist version of process for clean installing your Mac. To see v
     - [ ] ~/Pictures
 - Re-installation
   - [ ] Bootable USB
-    - [ ] [Download macOS Sierra](https://itunes.apple.com/tr/app/macos-sierra/id1127487414?mt=12)
+    - [ ] [Download macOS High Sierra](https://itunes.apple.com/tw/app/macos-high-sierra/id1246284741?l=en&mt=12)
     - [ ] Format USB drive with `Mac OS Extented (Journaled)` format and `Untitled` name
-    - [ ] Create bootable macOS USB with `sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction`
+    - [ ] Create bootable macOS USB with `sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ High\ Sierra.app --nointeraction`
   - [ ] Backup everything again
     - Connect your iPhone to iTunes and Make a full backup with option `Encrypt iPhone backup`
     - Connect your Time Machine drive and run a full backup of your Mac
@@ -81,7 +80,7 @@ This is the checklist version of process for clean installing your Mac. To see v
   - [ ] Format and Install your Mac
     - [ ] Plug in the bootable USB
     - [ ] Restart & hold down the Option(⌥) key
-    - [ ] Choose Install OS X Sierra(the bootable USB)
+    - [ ] Choose Install OS X High Sierra(the bootable USB)
     - [ ] Select `Disk Utility` from the menu and erase you Startup Disk(usually named Macintosh HD) with `Mac OS Extended (Journaled)`
     - [ ] Go back to the main menu; select Install macOS and choose your HDD when prompted
 - Migration
