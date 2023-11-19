@@ -1,95 +1,83 @@
 # Clean install your Mac without hesitation
 
-This is the checklist version of process for clean installing your Mac. To see verbose article, visit [Medium](https://medium.com/@abookyun/clean-install-your-mac-without-hesitation-7d379df8fc87#.1gv7sdq79).
+Checklist for clean install your Mac. For full article see: [Medium](https://medium.com/@abookyun/clean-install-your-mac-without-hesitation-7d379df8fc87#.1gv7sdq79)
 
-- Requirement
-  - An external drive with available space larger than your Mac for Time Machine and migrated data
-  - An USB larger than 8GB for bootable disk
-- Backup
-  - Connect your Time Machine drive and run a full backup of your Mac
-  - Softwares
-    - [ ] Install [Homebrew](https://brew.sh) with `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-    - [ ] Install [mas-cli](https://github.com/mas-cli/mas) with `brew install mas`
-    - [ ] Dump softwares list to `Brewfile` file with `brew bundle dump`
-    - [ ] Compare apps in `Application` folder with `Brewfile`.
-      - [ ] For apps found only in `Application` folder, `brew cask search {app_name}`.
-      - [ ] For apps found only in `Brewfile`, google and find if you need it anymore.
-    - [ ] Comment the `Brewfile` with leading `#` about how or why you need it.
-  - Software Data
-    - [ ] Keychains
-      - [ ] Turn on iCloud Keychains sync
+## 0. Requirement
+  - [ ] An external drive with available space larger than your Mac for Time Machine and backup data
+  - [ ] An USB larger than 16GB for bootable disk
+
+## 1. Backup Data
+  - [ ] Backup your Mac with Time Machine, just in case anything go wrong
+    - [ ] Connect to your Time Machine drive and run a full backup for your Mac
+  - [ ] Backup Software Data and Configuration
+    - [ ] Check installed Software
+      - [ ] Dump a list installed via [homebrew](https://brew.sh) to `Brewfile` file with `brew bundle dump`
+      - [ ] Check apps in `Application` folder and compare with `Brewfile`
+      - [ ] For apps found only in `Application` folder, `brew cask search {app_name}`
+      - [ ] For apps found only in `Brewfile`, google and find if you need it anymore
+    - [ ] Keychain Access
+      - [ ] Turn on iCloud Keychain sync
     - [ ] Safari
-      - [ ] [Backup Bookmarks](https://www.lifewire.com/back-up-or-move-safari-bookmarks-to-new-mac-2260891) from `~/Library/Safari/Bookmarks.plist`
+      - [ ] Turn on iCloud Safari sync
       - [ ] Backup Browse History from `~/Library/Safari/History*`
-      - [ ] Backup extensions from `~/Library/Safari/Extensions`
     - [ ] iTunes
       - [ ] Backup iTunes Library folder `iTunes` from `~/Music`
       - [ ] [Deauthorize Apple ID from iTunes](https://support.apple.com/en-us/HT201251)
     - [ ] Photos
+      - [ ] Turn on iCloud Photo Library
       - [ ] Backup Photos Library file `Photos Library.photoslibrary` from `~/Pictures`
     - [ ] Messages
+      - [ ] Turn on iCloud Messages sync
       - [ ] [Backup History](http://www.imore.com/how-view-and-move-your-imessage-history-and-attachments) from `~/Library/Messages`
-    - [ ] iBooks
-      - [ ] [Backup PDFs and Books](https://deciphertools.com/blog/how-to-backup-ibooks-pdfs/)
+    - [ ] Voice Memos
+      - [ ] Turn on iCloud sync
+    - [ ] Notes
+      - [ ] Turn on iCloud Notes sync
     - [ ] Fonts
       - [ ] [Backup Fonts](https://discussions.apple.com/thread/737547)
-    - [ ] Dashboard Widgets
-      - [ ] Backup widgets from `~/Library/Widgets`
     - [ ] 1Password
       - [ ] Enable Sync
-      - [ ] Backup backup files from `~/Library/Containers/2BUA8C4S2C.com.agilebits.onepassword-osx-helper/Data/Library/Backups`
+      - [ ] Backup backup files from `~/Library/Group\ Containers/2BUA8C4S2C.com.agilebits/Library/Application\ Support/1Password/Backups`
     - [ ] Day One
       - [ ] Enable Sync
-      - [ ] Backup backup files from `Library/Group Containers/5U8NS4GX82.dayoneapp2/Data/Backup`
     - [ ] Money Pro
       - [ ] Enable Sync
       - [ ] Manually backup from iOS app
-    - [ ] Dictionary
-      - [ ] [LDOCE5 Viewer](https://github.com/ciscorn/ldoce5viewer)
-      - [ ] Backup `ldoce5.data`
-    - [ ] Dash
-      - [ ] [Backup license file](https://kapeli.com/app_store_migrate)
-    - [ ] Screen Saver
-      - [ ] [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
-      - [ ] [Google Featured Photos Screen Saver](https://plus.google.com/featuredphotos)
-    - [ ] Dotfiles
+    - [ ] [dotfiles](https://github.com/abookyun/dotfiles)
       - [ ] ~/.ssh
-      - [ ] ~/.zshrc
-      - [ ] ~/.gitconfig
-  - Static files
+  - [ ] Backup Personal Data
     - [ ] ~/Desktop
     - [ ] ~/Documents
     - [ ] ~/Downloads
     - [ ] ~/Movies
     - [ ] ~/Music
     - [ ] ~/Pictures
-- Re-installation
+
+## 2. Create macOS Bootable USB and Clean install macOS
   - [ ] Bootable USB
     - [ ] [Download macOS Mojave](https://itunes.apple.com/tw/app/macos-mojave/id1398502828?l=en&mt=12)
     - [ ] Format USB drive with `Mac OS Extented (Journaled)` format and `Untitled` name
-    - [ ] Create bootable macOS USB with `sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ macOS\ Mojave.app --nointeraction`
+    - [ ] Create bootable macOS USB with `sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --nointeraction`
   - [ ] Backup everything again
-    - Connect your Time Machine drive and run a full backup of your Mac
+    - [ ] Connect your Time Machine drive and run a full backup of your Mac
   - [ ] Make sure you have these ready
     - [ ] Your Mac was properly backed up
-    - [ ] `Brewfile` is correctly on Dropbox or drive
-    - [ ] Check your migrated files are fully ready
+    - [ ] Your dotfiles was ready
+    - [ ] Your personal data was ready
   - [ ] WARNING: YOU ARE GOING TO DELETE EVERYTHING ON YOUR MAC IN THE NEXT STEP!!! You won’t be able to to open your Mac until macOS is installed.
   - [ ] Format and Install your Mac
     - [ ] Plug in the bootable USB
     - [ ] Restart & hold down the Option(⌥) key
     - [ ] Choose Install macOS Mojave(the bootable USB)
-    - [ ] Select `Disk Utility` from the menu and erase you Startup Disk(usually named Macintosh HD) with `Mac OS Extended (Journaled)`
+    - [ ] Select `Disk Utility` from the menu and erase you Startup Disk(usually named Macintosh HD) with `APFS`
     - [ ] Go back to the main menu; select Install macOS and choose your HDD when prompted
-- Migration
-  - [ ] Install [Homebrew](https://brew.sh) with `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-  - [ ] Install [mas-cli](https://github.com/mas-cli/mas) with `brew install mas`
-  - [ ] Copy `Brewfile` to your home folder then run `brew bundle` in `Terminal`
+
+## 3. Migrate Backup Data
+  - [ ] dotfiles
+    - [ ] git clone dotfiles repository, run `./install` via dotbot
   - [ ] Migrate Software data
     - [ ] Safari
-      - [ ] Migrate bookmarks
       - [ ] Migrate history
-      - [ ] Migrate extensions
     - [ ] iTunes
       - [ ] Migrate iTunes Library
       - [ ] [Authorize Apple ID to iTunes](https://support.apple.com/en-us/HT201251)
@@ -97,12 +85,12 @@ This is the checklist version of process for clean installing your Mac. To see v
       - [ ] Migrate Photos Library
     - [ ] Messages
       - [ ] Migrate Message folder
-    - [ ] iBooks
-      - [ ] Migrate PDFs and Books
+    - [ ] Voice Memes
+      - [ ] Enable Sync
+    - [ ] Notes
+      - [ ] Turn on iCloud sync
     - [ ] Fonts
       - [ ] Migrate Fonts
-    - [ ] Dashboard Widgets
-      - [ ] Install widgets to `~/Library/Widgets`
     - [ ] 1Password
       - [ ] Enable Sync
       - [ ] Migrate backup files
@@ -111,16 +99,8 @@ This is the checklist version of process for clean installing your Mac. To see v
       - [ ] Migrate backup files
     - [ ] Money Pro
       - [ ] Enable Sync
-    - [ ] Dictionary
-      - [ ] Migrate `ldoce5.data`
-      - [ ] [LDOCE5 Viewer](https://github.com/ciscorn/ldoce5viewer)
-    - [ ] Screen Saver
-      - [ ] [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
-      - [ ] [Google Featured Photos Screen Saver](https://plus.google.com/featuredphotos)
-    - [ ] Dotfiles
+    - [ ] dotfiles
       - [ ] ~/.ssh
-      - [ ] ~/.zshrc
-      - [ ] ~/.gitconfig
   - [ ] Migrate static files
     - [ ] ~/Desktop
     - [ ] ~/Documents
@@ -131,85 +111,44 @@ This is the checklist version of process for clean installing your Mac. To see v
   - [ ] Restore Settings
     - [ ] System Preferences
       - [ ] General
-        - [ ] Use dark menu bar and Dock
         - [ ] Recent items: None Documents, Apps, and Servers
       - [ ] Desktop & Screen Saver
         - [ ] Start after 2 Minutes
-        - [ ] Use [Apple TV Aerial Screen Saver for Mac](https://github.com/JohnCoates/Aerial)
       - [ ] Dock
-        - [ ] Size: 1/3
-        - [ ] Magnification: Max
         - [ ] Minimize windows into application icon: on
         - [ ] Automatically hide and show the Dock: on
       - [ ] Mission Control
         - [ ] Group windows by application: on
-        - [ ] Dashboard: As Overlay
         - [ ] Hot Corners
-          - [ ] Top Left: Dashboard
           - [ ] Top Right: Desktop
-          - [ ] Bottom Left: Start Screen Saver
-          - [ ] Bottom Right: Put Display to Sleep
-      - [ ] Language & Region
-        - [ ] Add `Traditional Chinese` to Preferred languages
-        - [ ] Time format: 24-Hour Time
+          - [ ] Bottom Left: Start Screen Sleep
       - [ ] Security & Privacy
-        - [ ] Require password 1 minute after sleep or screen saver begins
+        - [ ] Require password immediately
         - [ ] Turn on [FileVault](https://www.apple.com/macos/security/)
         - [ ] Turn on Firewall
         - [ ] Enable location for Weather, Siri
         - [ ] System Service: Show location icon in menu bar
-      - [ ] Notification
-        - [ ] Turn on Do Not Disturb
-        - [ ] Allow repeated calls
       - [ ] Keyboard
-        - [ ] Key Repeat: Fastest
-        - [ ] Delay Until Repeat: Fatest
-        - [ ] Use smart quotes and dashes: off
         - [ ] Specify shortcuts for Spotlight, Input Method, Show Notification
-        - [ ] Full Keyboard Access: All controls
         - [ ] Add `Zhuyin` to input sources
         - [ ] Dictation: add English, Chinese
       - [ ] Trackpad
         - [ ] Turn on Look up & data detectors, Tap to click, App expose
         - [ ] Tracking speed: 3/4
-      - [ ] Sound
-        - [ ] Show volume in menu bar
-        - [ ] Play feedback when volume is changed
-      - [ ] Siri
-        - [ ] Show Siri in menu bar: off
       - [ ] Time Machine
         - [ ] Select backup drive
         - [ ] Show icon in menu bar
-      - [ ] Accessibility
-        - [ ] Zoom: Enable Use scroll gesture to zoom, zoom style: picture in picture
-        - [ ] Mouse & Trackpad: Enable dragging without drag lock, Trackpad Fastest Scrolling Speed, Fastest Mouse Scrolling Speed
     - [ ] Finder
-      - [ ] Show Hard disks on desktop
       - [ ] New finder window show Home folder
       - [ ] Sidebar: Movies, Music, Pictures, Home folder
-      - [ ] Advanced: Show file extensions, searching current folder
     - [ ] Safari
       - [ ] Search engine: DuckDuckGo
-      - [ ] Show full website address
+      - [ ] Show full website address, Status Bar
       - [ ] Show Develop menu in menu bar
     - [ ] iTunes
       - [ ] iCloud Music Library: on
     - [ ] Photos
       - [ ] iCloud Photo Library: on
-    - [ ] Dash
-      - [ ] Install license file
-  - [ ] Development Environment
-    - [ ] iTerm2
-      - [ ] Install `oh-my-zsh`  https://github.com/robbyrussell/oh-my-zsh
-    - [ ] Shell
-      - [ ] `maximum-awesome` : https://github.com/square/maximum-awesome
-      - [ ] remember ssh passphrase: https://www.cyberciti.biz/faq/howto-fix-macos-keeps-asking-my-ssh-passphrase-since-i-updated-to-sierra/
-      - [ ] zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
     - [ ] Sublime Text 3
       - [ ] Install `Package Control` via https://packagecontrol.io
       - [ ] Install `Package Syncing`
-    - [ ] Dotfiles
-      - [ ] .gitconfig
-      - [ ] .zshrc
-      - [ ] .ssh
-    - [ ] Install ruby via rbenv `rbenv install 2.4.0`
